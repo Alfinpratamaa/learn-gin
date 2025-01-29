@@ -14,7 +14,7 @@ type Album struct {
 }
 
 var albums = []Album{
-	{ID: "1", Title: "Brooklyn Baby", Artist: "lana del rey", Price: 20.2},
+	{ID: "1", Title: "Brooklyn Baby owh", Artist: "lana del rey", Price: 20.2},
 	{ID: "2", Title: "Wanna Be Yours", Artist: "me", Price: 10.2},
 	{ID: "3", Title: "Wildflower", Artist: "Billie eilish", Price: 20.2},
 }
@@ -24,8 +24,7 @@ func main() {
 	router.GET("/albums", getAlbums)
 	router.GET("/album/:id", getAlbumById)
 	router.POST("/new/albums", postsAlbum)
-
-	router.Run("127.0.0.1:8000")
+	router.Run("localhost:8080")
 }
 func getAlbums(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, albums)
